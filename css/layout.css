@@ -1,0 +1,376 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* reset end */
+
+/* header start */
+.wrap{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.header{
+    max-width: 100%;
+    position: relative;
+    
+}
+.header  a{
+    text-decoration: none;
+}
+.up-header{
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0,0,0,0.75);
+    padding: 16px 42px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.up-header .logo a{
+    background-image: url(../img/logo_w.svg);
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 24px;
+}
+.up-header .menu-bar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.up-header .menu-bar li{
+    margin-left: 25px;
+    
+}
+
+.up-header .menu-bar li a{
+    display: block;
+    color: #FFF;
+    padding: 0 5px;
+    font-size: 16px;
+    transition: all .5s ;
+}
+.up-header .menu-bar li a:hover {
+    
+    color: coral;
+}
+
+.menu-bar-mobile , .login-moblie{
+    display: none;
+}
+.hambuger-menu{
+    display: none;
+}
+/* 上面是手機板在桌機時隱藏 */
+.down-header{
+    height: 420px;
+    background-image: url(../img/header_bg.png);
+    max-width: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.down-header .down-header-text{
+    text-align: center;
+    color: #FFF;
+    background: rgba(0,0,0,0.35);
+    padding: 20px 40px;
+}
+.down-header .down-header-text h2{
+    font-size: 36px;
+    margin-bottom: 16px;    
+}
+.down-header .down-header-text p{
+    font-size: 16px;
+    line-height: 1.5rem;
+    opacity: .8;
+}
+@media(max-width:768px) {
+    .wrap{
+        max-width: 100%;
+    }
+    .up-header{
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 25px;
+    }
+    .up-header a{
+        color: #FFF;
+        text-decoration: none;
+    }
+    .up-header .menu-bar{
+        display: none;
+    }
+    .up-header .hambuger-menu{
+        width: 25px;
+        height: 25px;
+        position: relative;
+        display: block;
+        cursor: pointer;
+    }
+    .up-header .hambuger-menu > div{
+        position: absolute;
+    top: 45%;
+    width: 100%;
+    height: 4px;
+    background: #fff;
+    border-radius: 50px;
+    transition: all .5s ;
+    }
+    
+    .up-header .hambuger-menu .one{
+        top: 20%;
+    }
+    .up-header .hambuger-menu.open-hambuger-menu .one{
+        transform: rotate(45deg);
+        top: 45%;
+    }
+    .up-header .hambuger-menu.open-hambuger-menu .two{
+        display: none;
+    }
+    .up-header .hambuger-menu .three{
+        top: 70%;
+    }
+    .up-header .hambuger-menu.open-hambuger-menu .three{
+        transform: rotate(-45deg);
+        top: 45%;
+    }
+    .menu-bar-mobile{
+        display: block;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 5;
+    }
+    .menu-bar-mobile li{
+        display: none;
+    }
+    .menu-bar-mobile li a{
+        text-align: center;
+        display: block;
+        font-size: 18px;
+        transition: all .5s;
+        background: rgba(0,0,0,0.75);
+        padding: 20px 0;
+    }
+    .menu-bar-mobile li a:hover{
+        background-color: #fff;
+        color: black;
+    }
+    .login-moblie {
+        display: block;
+        transition: all .5s;
+    }
+    .login-moblie a:hover{
+        color: coral;
+    }
+    .down-header{
+        background-image: url(../img/header_mobile@2x.png);
+    }
+    .down-header .down-header-text{
+        padding: 20px 40px;
+    }
+    .down-header .down-header-text h2{
+        margin-bottom: 36px;    
+    }
+    .down-header .down-header-text p{
+        font-size: 18px;
+        line-height: 2.5rem;
+        opacity: .9;
+    }
+}
+/* header end */
+
+/* footer start */
+.footer{
+    padding: 42px 50px;
+    display: flex;
+    justify-content: space-between;
+    background: #efe9e7;
+}
+.footer h2, a{
+    color: #3D1101 ;
+}
+.ft-about{
+    width: 30%;
+    margin-right: 20px;
+}
+.ft-about h2, .ft-contect h2{
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+.ft-contect{
+    width: 40%;
+}
+.ft-contect li{
+    list-style: initial;
+    margin:0 0 5px 20px;
+}
+.ft-contect li a{
+    text-decoration: none;
+}
+.ft-logo{
+    display: flex;
+    flex-direction: column;
+}
+.ft-logo h2{
+    margin-bottom: 22px;
+}
+.ft-logo h2 a{
+    font-size: 49px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.ft-logo ul{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 36px;    
+}
+.ft-logo ul li{
+    margin-left: 10px;
+}
+.ft-logo ul li .scale:hover{
+    transform: scale(1.1);
+}
+.ft-logo ul li .fa-google-plus-square{
+    color: #db4437;
+}
+.ft-logo ul li .fa-twitter-square{
+    color: #41abe1;
+}
+.ft-logo ul li .fa-facebook-square{
+    color: #3a5795;
+}
+.footer .ft-backtop{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(44, 42, 42);
+    color: #FFF;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    transition: all.5s;
+}
+.footer .ft-backtop:hover{
+    background-color: #a78640;
+    color:  black;
+}
+@media(max-width:768px) {
+    .footer{
+        padding: 42px ;
+        flex-direction: column;
+    }
+    .footer h2, a{
+        color: #3D1101 ;
+    }
+    .ft-about, .ft-contect{
+        width: 80%;
+        margin-bottom: 30px;
+    }
+    .ft-contect li{
+        list-style: initial;
+        margin:0 0 5px 20px;
+    }
+    .ft-contect li a{
+        text-decoration: none;
+    }
+    .ft-logo{
+        display: flex;
+        flex-direction: column;
+    }
+    .ft-logo h2{
+        margin-bottom: 22px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .ft-logo h2 a{
+        font-size: 49px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .ft-logo ul{
+        display: flex;
+        justify-content: flex-end;
+        font-size: 36px;    
+    }
+    .ft-logo ul li{
+        margin-left: 10px;
+    }
+    .ft-logo ul li .scale:hover{
+        transform: scale(1.1);
+    }
+    .ft-logo ul li .fa-google-plus-square{
+        color: #db4437;
+    }
+    .ft-logo ul li .fa-twitter-square{
+        color: #41abe1;
+    }
+    .ft-logo ul li .fa-facebook-square{
+        color: #3a5795;
+    }
+    .footer .ft-backtop{
+        width: 35px;
+        height: 35px;
+        font-size: 8px;
+        right: 2%;
+        bottom: 2%;
+        text-align: center;
+        padding: 0;
+    }
+}
+/* footer end */
